@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>meet</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+
+<body>
+    <audio src="./music.mp3" autoplay="true" loop="loop"></audio>
+    <canvas id='cavs' style='position:fixed; z-index:-1;'></canvas>
+    <div id="back">
+        <div class="mask"></div>
+        <!-- 设置展示的图片，github pages不能有后台程序只能一条一条手动添加了 囧 -->
+        <!-- <div id="carousel" class="carousel slide carousel-fade carousel-position">
+            <div class="carousel-inner" style="width: 100%;height: 100%;" id="background">
+                <div class="item active" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background:url(./img/1.PNG);background-size: cover;"></div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/2.png) ;background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/3.png) ;background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/4.png) ;background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/5.png);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/6.png);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/7.jpg);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/8.jpg);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/9.jpg);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/10.jpg);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/11.png);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/12.png);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/13.png);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/14.png);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/15.jpg);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/16.png);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/17.png);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/18.png);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/19.png);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/20.jpg);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/21.jpg);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/22.jpg);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/23.jpg);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/24.jpg);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/25.jpg);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/26.jpg);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/27.jpg);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/28.png);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/29.png);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/30.jpg);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/31.jpg);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/32.jpg);background-size: cover;">
+                    </div>
+                </div>
+                <div class="item" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background-image: url(./img/end.png);background-size: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="modal show" style="top:24%;">
+        <div class="modal-dialog" style="opacity: .9">
+            <div class="modal-content" style="opacity:.85">
+                <div class="modal-header">
+                    <h1 class="text-center"
+                        style="color: #A94442;font-family: 'JournalRegular', Arial, sans-serif;font-size: 7rem;">Our Meeting</h1>
+                    <p class="text-center small-title">秋 & Y.</p>
+                    <p class="text-center small-title">Have Been Met</p>
+                </div>
+                <div class="modal-body text-center"
+                    style="line-height: 1.5rem;font-family: 'JournalRegular', Arial, sans-serif;font-size: 3rem;">
+                    <p>
+                        <span id="day" class="time-font"></span><span style="color:#A94442">/&nbsp;</span><span
+                            id="hour" class="time-font"></span><span style="color:#A94442">/&nbsp;</span><span
+                            id="minute" class="time-font"></span><span style="color:#A94442">/&nbsp;</span><span
+                            id="second" class="time-font"></span>
+                    </p>
+                    <p>
+                        days/hours/min/sec
+                    </p>
+                    <p class="text-center" style="color:#A94442;font-size: 17px" id="say"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/count-time.js"></script>
+    <script>
+        var canvas = document.getElementById("cavs");
+        const WIDTH = window.innerWidth;
+        const HEIGHT = window.innerHeight;
+        canvas.setAttribute("width", WIDTH);
+        canvas.setAttribute("height", HEIGHT);
+        var context = canvas.getContext("2d");
+        var start = {
+            loves: [],
+            DURATION: 30,
+            begin: function () {
+                this.createLove();
+            },
+            createLove: function () {
+                for (var i = 0; i < WIDTH / 59; i++) {
+                    var love = new Love();
+                    this.loves.push(love);
+                }
+                setInterval(this.drawLove.bind(this), this.DURATION);
+            },
+            drawLove: function () {
+                context.clearRect(0, 0, WIDTH, HEIGHT);
+                for (var key in this.loves) {
+                    this.loves[key].draw();
+                }
+            }
+        }
+
+        function Love() {
+            var me = this;
+
+            function rand() {
+                me.maxScale = (Math.random() * 3.2 + 1.2) * WIDTH / 521;
+                me.curScale = 1.2 * WIDTH / 521;
+                me.x = Math.floor(Math.random() * WIDTH - 40);
+                me.y = Math.floor(HEIGHT - Math.random() * 200);
+                me.ColR = Math.floor(Math.random() * 255);
+                me.ColG = Math.floor(Math.random() * 255);
+                me.ColB = Math.floor(Math.random() * 255);
+                me.alpha = Math.random() * 0.2 + 0.8;
+                me.vector = Math.random() * 5 + 0.4;
+            }
+            (function () {
+                rand();
+            }());
+            me.draw = function () {
+                if (me.alpha < 0.01) rand();
+                if (me.curScale < me.maxScale) me.curScale += 0.3;
+                x = me.x;
+                y = me.y;
+                scale = me.curScale;
+                context.fillStyle = "rgba(" + me.ColR + "," + me.ColG + "," + me.ColB + "," + me.alpha + ")";
+                context.shadowBlur = 10;
+                context.shadowColor = "rgb(" + me.ColR + "," + me.ColG + "," + me.ColB + ")";
+                context.beginPath();
+                context.bezierCurveTo(x + 2.5 * scale, y + 2.5 * scale, x + 2.0 * scale, y, x, y);
+                context.bezierCurveTo(x - 3.0 * scale, y, x - 3.0 * scale, y + 3.5 * scale, x - 3.0 * scale, y +
+                    3.5 * scale);
+                context.bezierCurveTo(x - 3.0 * scale, y + 5.5 * scale, x - 1.0 * scale, y + 7.7 * scale, x + 2.5 *
+                    scale, y + 9.5 * scale);
+                context.bezierCurveTo(x + 6.0 * scale, y + 7.7 * scale, x + 8.0 * scale, y + 5.5 * scale, x + 8.0 *
+                    scale, y + 3.5 * scale);
+                context.bezierCurveTo(x + 8.0 * scale, y + 3.5 * scale, x + 8.0 * scale, y, x + 5.0 * scale, y);
+                context.bezierCurveTo(x + 3.5 * scale, y, x + 2.5 * scale, y + 2.5 * scale, x + 2.5 * scale, y +
+                    2.5 * scale);
+                context.fill();
+                context.closePath();
+                me.y -= me.vector;
+                me.alpha -= (me.vector / 2.9 * 3.5 / HEIGHT);
+            }
+        }
+        window.onload = function () {
+            start.begin();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        $(function () {
+            //设置起始日期
+            countTime('2022/02/13 19:06', 'day', 'hour', 'minute', 'second');
+            var days = $('#day').text();
+
+            // 设置标题
+            if (parseInt(days / 365) != 0) {
+                $(document).attr("title", "相遇" + parseInt(days / 365) + "年,感谢相伴。");
+            } else if (parseInt(days / 30) != 0) {
+                $(document).attr("title", "相遇" + parseInt(days / 30) + "个月,感谢相伴。");
+            } else
+                $(document).attr("title", "相遇" + days + "天,感谢相伴");
+
+            //设置每一张图片对应的文字
+            var says = new Array(
+                "月遇从云，花遇和风",
+                "温柔轻盈，缓慢坚定",
+                "山河远阔，人间烟火",
+                "有人可爱，有梦可待",
+                "风止于秋水，我止于你",
+                "年年有风，风吹年年",
+                "多喜乐，长安宁",
+                "幸得识卿桃花面，从此阡陌多暖春",
+                "大抵知心有庭树，亭亭一如你风致",
+                "有趣有盼，不负心中热爱",
+                "望穿秋水，只有你",
+                "风止于秋水，我止于你",
+                "和已知的人，去过未知的人生",
+                "多喜乐，长安宁",
+                "月遇从云，花遇和风",
+                "月亮照回湖心，野鹤奔向闲云",
+                "山河远阔，人间烟火",
+                "无一是你，无一不是你",
+                "风止于秋水，我止于你",
+                "和已知的人，去过未知的人生",
+                "多喜乐，长安宁",
+                "月遇从云，花遇和风",
+                "月亮照回湖心，野鹤奔向闲云",
+                "山河远阔，人间烟火",
+                "无一是你，无一不是你",
+                "风止于秋水，我止于你",
+                "和已知的人，去过未知的人生",
+                "多喜乐，长安宁",
+                "月遇从云，花遇和风"
+            );
+
+
+            var start = function () {
+                var index = 0;
+                var rate = 6000;
+                $('#say').text(says[(index++) % says.length]);
+                var _play = function () {
+                    $('#say').hide();
+                    $('#say').text(says[(index++) % says.length]);
+                    $('#say').fadeToggle();
+                    $('#carousel').carousel('next');
+                };
+                setInterval(_play, rate);
+            }();
+
+        });
+    </script>
+</body>
+
+</html>
